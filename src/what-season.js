@@ -16,8 +16,8 @@ function getSeason(date) {
   if(date === undefined){
     return 'Unable to determine the time of year!'
   }
-  if(date === NaN){
-    return 'Invalid date!'
+  if(isNaN(date)){
+    throw Error("Invalid date!");
   }
   if(month=== 0 || month===1 ||month===11){
     return 'winter'
