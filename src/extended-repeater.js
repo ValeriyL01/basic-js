@@ -16,16 +16,20 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function repeater( str,  { repeatTimes = 1, separator = '+', addition = '', additionRepeatTimes = 1, additionSeparator = '|' }) {
-  /*
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
-  */
-  let res = []
-  for(let i=0;i<repeatTimes;i++){
-    res.push(`${String(str)}${String(addition)}`)
-  }
 
-return res.join(`${separator}`)
+  let res = []
+  let result = []
+    for(let j=0;j<additionRepeatTimes;j++){
+
+      res.push(`${String(addition)}`)
+    }
+
+    let s = res.join(`${additionSeparator}`)
+    for(let i=0;i<repeatTimes;i++){
+      result.push(`${String(str)}${String(s)}`)
+  }
+  
+return result.join(`${separator}`)
 }
 
 module.exports = {
